@@ -1,0 +1,13 @@
+# @name HealthCheck
+
+# @description
+# This is a health check for the application. It will return a 200 status code
+# if the application is running correctly.
+
+# @path /health
+# @verb get
+# @response 200 - OK
+# @response 500 - Internal Server Error
+
+
+GET http://localhost:3000/
