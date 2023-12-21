@@ -1,8 +1,8 @@
 import { Module, Provider } from '@nestjs/common';
 import { BullModule } from '@nestjs/bullmq';
 import { QueryJob } from './domain/query.job';
-import { TestService } from './services/test.service';
-import { TestConsumerEvent } from './workers/test.consumer.event';
+import { TestService } from './providers/test.service';
+import { TestConsumerEvent } from './consumer/test.consumer.event';
 
 const providers: ReadonlyArray<Provider> = [
   {
