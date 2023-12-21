@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
+import { QueryJob } from './domain/query.job';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private readonly _queryJob: QueryJob,
+  ) {}
 
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Post('/add-job')
+  async addJob(@Body() body: { name: string }): Promise<void> {
+    await this._queryJob.addJob(body.name);
   }
 }
