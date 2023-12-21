@@ -15,7 +15,9 @@ export class AppController {
   }
 
   @Post('/add-job')
-  async addJob(@Body() body: { name: string }): Promise<void> {
-    await this._queryJob.addJob(body.name);
+  async addJob(@Body() body: { name: string }): Promise<boolean> {
+    const response: unknown = await this._queryJob.addJob(body.name);
+    console.log(response);
+    return true;
   }
 }
