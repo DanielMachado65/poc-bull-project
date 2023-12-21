@@ -21,11 +21,8 @@ const providers: ReadonlyArray<Provider> = [
     BullModule.registerQueue({
       name: 'testQueue',
     }),
-    // Outras importações necessárias
   ],
   providers: [...providers],
-  // Exporte o TestService se ele será usado por outros módulos
   exports: [...providers],
-  // Inclua controladores se houver
 })
 export class BullmqModule {}
