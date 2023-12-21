@@ -18,6 +18,9 @@ const providers: ReadonlyArray<Provider> = [
         port: 6379,
       },
     }),
+    BullModule.registerQueue({
+      name: 'testQueue',
+    }),
     // Outras importações necessárias
   ],
   providers: [...providers],
