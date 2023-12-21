@@ -2,7 +2,7 @@ import { Module, Provider } from '@nestjs/common';
 import { BullModule } from '@nestjs/bullmq';
 import { QueryJob } from './domain/query.job';
 import { TestService } from './services/test.service';
-import { ConsumerEvent } from './workers/consumer.event';
+import { TestConsumerEvent } from './workers/test.consumer.event';
 
 const providers: ReadonlyArray<Provider> = [
   {
@@ -23,7 +23,7 @@ const providers: ReadonlyArray<Provider> = [
       name: 'testQueue',
     }),
   ],
-  providers: [...providers, ConsumerEvent],
+  providers: [...providers, TestConsumerEvent],
   exports: [...providers],
 })
 export class BullmqModule {}
