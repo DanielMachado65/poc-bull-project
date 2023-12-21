@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { BullmqModule } from './bullmq.module';
 
 @Module({
-  imports: [],
+  imports: [BullmqModule],
   controllers: [AppController],
   providers: [AppService],
 })
